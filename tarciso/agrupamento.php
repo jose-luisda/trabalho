@@ -4,7 +4,7 @@ require 'msql.php';
 class Classagrupamento extends ClassMDL
 {
     protected $campo,$table,$values;
-    function Functionagrupamento( $var = null)
+    function Functionagrupamento( $var = null,$variable)
     {
         foreach ($var as $key => $value) {
             switch ($variable) {
@@ -14,6 +14,7 @@ class Classagrupamento extends ClassMDL
                           $banco->bindvalue(":$key",$value,PDO::PARAM_STR);
                           $this->values = ":$key,";
                           $this->campo = $key . ',';
+                          
                       } else {
                           if ($key == 'cpf') {
                             $banco = self::FunctionIserte();
@@ -41,6 +42,7 @@ class Classagrupamento extends ClassMDL
                       
                     break;
             }
+            echo $this->values;
         }
     }
 }

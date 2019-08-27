@@ -15,13 +15,7 @@ class Classconn
 
     function FunctionExecute()
     {
-        $this->conn = new PDO("msql:host=$this->host;dbname=$this->db",$this->use,$this->pass);
-
-        if ($this->conn) {
-            echo 'conectado';
-        } else {
-            echo 'não conectado';
-        }
+        $this->conn = new PDO("mysql:host=$this->host;dbname=$this->db",$this->use,$this->pass);
         
     }
     function FunctionSQL($msql)
@@ -32,4 +26,5 @@ class Classconn
         return $sql;
     }
 }
+
 ?>

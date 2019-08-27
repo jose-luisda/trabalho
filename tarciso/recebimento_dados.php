@@ -7,7 +7,7 @@ class Classredebe extends Classagrupamento
     function dadoscomun()
     {
         $this->dados = array('nome' =>$_POST['nome'] , 'cpf'=>$_POST['cpf'],'email'=>$_POST['email'],'telefone'=>$_POST['telefone']);
-        self::Functionagrupamento($this->dados);
+        self::Functionagrupamento($this->dados,'aluno');
     }
 }
 $obj = new Classredebe;
