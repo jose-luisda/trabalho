@@ -1,12 +1,15 @@
 <?php
-class ClassName 
+require 'agrupamento.php';
+class Classredebe extends Classagrupamento
 {
     private $dados;
 
     function dadoscomun()
     {
-        $dados = array('nome' =>$_POST['nome'] , 'cpf'=>$_POST['cpf'],'email'=>$_POST['email'],'telefone'=>$_POST['telefone']);
-
+        $this->dados = array('nome' =>$_POST['nome'] , 'cpf'=>$_POST['cpf'],'email'=>$_POST['email'],'telefone'=>$_POST['telefone']);
+        self::Functionagrupamento($this->dados);
     }
 }
+$obj = new Classredebe;
+$obj->dadoscomun();
 ?>

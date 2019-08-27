@@ -1,7 +1,7 @@
 <?php
 
 require 'msql.php';
-class Classagrupamento extends 
+class Classagrupamento extends ClassMDL
 {
     protected $campo,$table,$values;
     function Functionagrupamento( $var = null)
