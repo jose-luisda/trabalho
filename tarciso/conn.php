@@ -21,15 +21,17 @@ class Classconn
     function FunctionSQL($msql=null,$banco=null,$parametro=null,$id = null)
     {
         $this->sql = $this->conn->prepare($msql);
-        
-            // $this->sql->bindValue($parametro[0], $banco[0], PDO::PARAM_STR);
-            // $this->sql->bindValue($parametro[1], $banco[1], PDO::PARAM_STR);
-            // $this->sql->bindValue($parametro[2], $banco[2], PDO::PARAM_STR);
-            // $this->sql->bindValue($parametro[3], $banco[3], PDO::PARAM_STR);
-            $this->sql->bindValue(':id', $id, PDO::PARAM_INT);
-            $this->sql->execute();
-
-       return $this->sql;
+            if (!$id) {
+                $this->sql->bindParam(':nome', $banco[0], PDO::PARAM_STR);
+                $this->sql->bindParam(':cpf', $banco[1], PDO::PARAM_STR);
+                $this->sql->bindParam(':email', $banco[2], PDO::PARAM_STR);
+                $this->sql->bindParam(':telefone', $banco[3], PDO::PARAM_STR);
+                $this->sql->execute();
+            } else {
+                $this->sql->bindValue(':id', $id, PDO::PARAM_INT);
+                $this->sql->execute();
+            }
+         return $this->sql;
     }
 }
 
