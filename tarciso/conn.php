@@ -31,6 +31,10 @@ class Classconn
                 $this->sql->bindValue(':id', $id, PDO::PARAM_INT);
                 $this->sql->execute();
             }
+
+            if($parametro){
+                $this->sql->bindParam(':id', $id, PDO::PARAM_INT); 
+            }
          return $this->sql;
     }
 }

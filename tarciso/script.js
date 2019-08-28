@@ -20,23 +20,24 @@ dados.addEventListener('submit',(e)=>{
     var enviadados = envia_dados(this.dados);
 })
 
-function Selecao() {
+function Selecao(deleta) {
     $.ajax({
         
         url:'selecao.php',
         type:'post',
         dataType: 'json',
         data:{
-            'condicao': 1
+            'condicao': 1,
+            'deleta': deleta
         }
         
     }).done(function(resultado){
-        tabela(resultado)
+            tabela(resultado);
     })
 }
 var select = Selecao();
-// setInterval(() => {
-//     var select = Selecao();
+// // setInterval(() => {
+// //     var select = Selecao();
 // }, 10000);
 
 function tabela(dados) {
@@ -58,14 +59,15 @@ for (let ind = 0; ind < dados.contador ; ind++) {
             var td = document.createElement('td');
             if (index == 5 ) {
                 var excluir = document.createElement('button');
-                excluir.setAttribute('value',dados.data[0][0]);
+                excluir.setAttribute('value',dados.data[ind][0]);
+                excluir.setAttribute('class','btn excluir');
                 var fraze = document.createTextNode('Excluir');
                 excluir.appendChild(fraze);
                  td.appendChild(excluir);
             } else {
                 if (index == 6) {
                     var excluir = document.createElement('button');
-                    excluir.setAttribute('value',dados.data[0][0])
+                    excluir.setAttribute('class','btn ');
                     fraze = document.createTextNode('Atualizar');
                     excluir.appendChild(fraze);
                     td.appendChild(excluir);
@@ -80,5 +82,14 @@ for (let ind = 0; ind < dados.contador ; ind++) {
 
     tab.appendChild(tr);
 }
-   
+
+
+var excluir = document.querySelectorAll('.excluir');
+excluir.forEach((items,index) => {
+    items.addEventListener('click',()=>{
+        
+        var valor = excluir[index].value;
+        var select = Selecao(valor);
+    })
+});
 }
