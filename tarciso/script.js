@@ -34,18 +34,24 @@ function Selecao() {
         tabela(resultado)
     })
 }
-
 var select = Selecao();
-
+// setInterval(() => {
+//     var select = Selecao();
+// }, 10000);
 
 function tabela(dados) {
+
+
     var tab = document.getElementById('table')
+    
+
+for (let ind = 0; ind < dados.contador ; ind++) {
     var tr = document.createElement("tr");
-    for (let index = 0; index < 7; index++) {
+     for (let index = 0; index < 7; index++) {
 
         if (index<=4) {
             var td = document.createElement('td');
-            var valor = document.createTextNode(dados.data[0][index])
+            var valor = document.createTextNode(dados.data[ind][index])
             td.appendChild(valor);
             tr.appendChild(td);
         } else {
@@ -71,6 +77,8 @@ function tabela(dados) {
        
         
     }
+
     tab.appendChild(tr);
+}
    
 }
