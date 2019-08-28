@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>escola</title>
+    <style>
+        table td{
+            border: solid 1px;
+        }
+    </style>
 </head>
 <body>
+    <h1>
+        Ficha do aluno
+    </h1>
     <form action="" method="post" id='dados'>
         <input type="text" name="nome" id=""><br>
         <input type="text" name="cpf" id=""><br>
-        <input type="text" name="tel" id=""><br>
+        <input type="text" name="telefone" id=""><br>
         <input type="email" name="email" id=""><br>
         <!-- <input type="hidden" name=""> -->
         <button type="submit">
             envia
         </button>
     </form>
+
+    <div>
+        <table id='table'>
+
+        </table>
+    </div>
 </body>
 <script src="jquery.js"></script>
 <script src="script.js"></script>
