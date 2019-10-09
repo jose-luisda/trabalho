@@ -1,3 +1,3 @@
 <?php
-$lingua[1] = "pt";
+$lingua[1] = "en";
 ?>

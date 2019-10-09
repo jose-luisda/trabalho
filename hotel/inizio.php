@@ -320,7 +320,7 @@ else echo "<div style=\"background: url(".C_URL_LOGO.") no-repeat right top;\">"
 if ($nome_utente_login) {
 echo "<div class=\"logout\">".mex("Utente",$pag).": $nome_utente_login".".
  <a href=\"inizio.php?id_sessione=$id_sessione&amp;logout=SI\">".mex("Esci",$pag)."</a></div>";
-}# fine if ($nome_utente_login)
+} # fine if ($nome_utente_login)
 
 $anno_succ = $anno + 1;
 echo "<br><div style=\"text-align: center;\"><h3 id=\"h_mm\"><span>".mex("Menù principale dell'anno",$pag)." $anno";
@@ -332,7 +332,7 @@ echo "<table class=\"ires\" cellspacing=0 cellpadding=0>
 <form style=\"display: inline;\" accept-charset=\"utf-8\" method=\"post\" action=\"prenota.php\"><div>
 <input type=\"hidden\" name=\"anno\" value=\"$anno\">
 <input type=\"hidden\" name=\"id_sessione\" value=\"$id_sessione\">
-<button class=' ires btn-primary '  type=\"submit\"><div class='bg-primary'>".mex("Inserisci una nuova prenotazione",$pag)."</div></button><br>
+<button class=\"ires\" type=\"submit\"><div>".mex("Inserisci una nuova prenotazione",$pag)."</div></button><br>
 </div></form></td><td style=\"width: 10px;\">
 </td></tr></table><div id=\"mm_sub1\"></div>";
 } # fine if ($priv_ins_nuove_prenota == "s")
@@ -938,16 +938,16 @@ echo "<br><hr style=\"width: 95%\"><br>
 if ($tema[$id_utente] != "base") include("./themes/".$tema[$id_utente]."/php/foot.php");
 else include("./includes/foot.php");
 
-} 
+} # fine else if ($anno_esistente == "SI")
 
-} 
-
-
+} # fine else if (@is_file(C_DATI_PATH."/dati_connessione.php") != true)
 
 
 
 
-} 
+
+
+} # fine if ($id_utente)
 
 
 
