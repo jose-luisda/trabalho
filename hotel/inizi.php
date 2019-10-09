@@ -938,16 +938,16 @@ echo "<br><hr style=\"width: 95%\"><br>
 if ($tema[$id_utente] != "base") include("./themes/".$tema[$id_utente]."/php/foot.php");
 else include("./includes/foot.php");
 
-} # fine else if ($anno_esistente == "SI")
+} 
 
-} # fine else if (@is_file(C_DATI_PATH."/dati_connessione.php") != true)
-
-
+} 
 
 
 
 
-} # fine if ($id_utente)
+
+
+} 
 
 
 

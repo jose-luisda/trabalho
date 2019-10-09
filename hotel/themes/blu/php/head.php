@@ -24,7 +24,7 @@
 
 
 # tables background color and dimensions
-$t1color = "#b9ccd4";
+$t1color = "#cc0000";
 $t1border = "2";
 $t1cellspacing = "0";
 $t1cellpadding = "3";
@@ -51,6 +51,8 @@ echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"
 <html>
 <head>
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" >
+
+
 <meta name=\"viewport\" content=\"initial-scale=$iscale\">
 <title> $titolo </title>";
 if ($pag == "visualizza_contratto.php" and $extra_head) echo $extra_head;
@@ -218,7 +220,7 @@ return $mese_attuale;
 if (($pag == "tabella.php" or $pag == "tabella2.php" or $pag == "tabella3.php" or $pag == "visualizza_tabelle.php" or $pag == "storia_soldi.php") and !$mobile_device) $mostra_X = "SI";
 
 
-echo "<table class=\"nav_bar\" style=\"background-color: $t1color;\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">
+echo "<table   width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">
 <tr>";
 
 if ($mostra_X == "SI") echo "<td style=\"width: 10px;\"></td>";

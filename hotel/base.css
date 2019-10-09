@@ -1,4 +1,11 @@
+#menubox table{
+    background-color: #;
+}
 
+#menubox tr td{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
 div,form { margin:0; padding:0; }
 [type='text'], [type='password'] { border: solid 1px #bbb; padding: 2px; margin-top: 1px; margin-bottom: 1px; border-radius: 3px; }
 [type='text']:focus, [type='password']:focus { border-color: #9ecaed; box-shadow: 0 0 3px #9ecaed; }
